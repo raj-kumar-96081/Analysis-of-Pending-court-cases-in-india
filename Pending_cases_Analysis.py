@@ -28,11 +28,11 @@ df.groupby('District and Taluk Court Case type')[l].sum()
 lakshadweep_data = df[df['srcStateName'] == 'Lakshadweep']
 print("\nLakshadweep Data (Raw):")
 print(lakshadweep_data.to_string(index=False))
-    
+# it shows that data which was inconsistent
 # Highlight ambiguity
 total_cases = lakshadweep_data['Pending cases'].sum()
 print("\nWhy This Data is Ambiguous:")
-print(f"- Lakshadweep reports {total_cases:,} pending cases, which is impossible.")
+print(f"- Lakshadweep reports {total_cases:} pending cases, which is impossible.")
 print("- For context: Lakshadweep's population is around 65,000, while India's total pending cases are ~52M.")
 print("- This suggests a data entry or aggregation error, as one small UT shouldn't account for nearly 90% of national cases.")
 
